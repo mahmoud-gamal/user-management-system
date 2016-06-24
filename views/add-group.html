@@ -1,0 +1,26 @@
+<div class="ui-view" id="add-group">
+  <div class="container">
+    <div class="page-title-container">
+      <div class="page-title inline">Add Group</div>
+    </div>
+
+    <form data-bind="submit: function() {addGroup()}">
+      <div class="form-group">
+        <label for="username">Group Name</label>
+        <input type="text" id="username" placeholder="Enter Group Name" class="form-control" data-bind="textInput: groupName" required="true" />
+      </div>
+
+      <div class="form-group">
+        <label for="role">Description</label>
+        <input type="text" id="role" placeholder="Enter Group Description" class="form-control" data-bind="textInput: description" required="true" />
+      </div>
+
+      <div class="control-btns">
+        <button type="submit" class="add">Add Group</button>
+        <button type="button" class="remove" data-bind="click: function() {cancel()}">Cancel</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>

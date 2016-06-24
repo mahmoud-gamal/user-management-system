@@ -1,0 +1,333 @@
+@import '_fonts';
+
+// responsivness
+$break-small: 680px;
+
+// nav bar
+$nav-background-color: #203049;
+$nav-background-hover-color: #2469a0;
+$nav-foreground-color: #f2f2f2;
+$nav-foreground-hover-color: #f2f2f2;
+
+$side-margin: 10px;
+$top-margin: 20px;
+
+$list-border-color: #a6a6a6;
+
+body {
+  font-family: roboto;
+}
+
+html {
+  height: 100%;
+}
+
+.single-page-container {
+  // height: calc(100% - 80px);
+  padding-top: 50px;
+  // overflow-y: scroll;
+}
+
+.page-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.page-title.inline {
+  display: inline-block;
+}
+.page-subtitle {
+  font-size: 0.8em;
+  font-weight: lighter;
+}
+.page-title-container {
+  width: 100%;
+  .header-button {
+    float: right;
+    height: 30px;
+    margin-top: 20px;
+  }
+}
+
+nav {
+  width: 100%;
+  height: 50px;
+  background-color: $nav-background-color;
+  position: fixed;
+  top: 0;
+}
+.title-container {
+  display: inline-block;
+  color: $nav-foreground-color;
+
+  .logo {
+    width: 30px;
+    height: 40px;
+    padding: 5px;
+    font-size: 2em;
+    color: $nav-foreground-color;
+    display: inline-block;
+    margin: 0 5px;
+  }
+  .title-text {
+    font-size: 1em;
+    line-height: 3em;
+    vertical-align: bottom;
+  }
+
+}
+
+div.menu-container {
+  height: auto !important;
+  display: inline-block;
+  float: right;
+  z-index: 10;
+}
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: $nav-background-color;
+}
+
+/* Float the list items side by side */
+ul.topnav li {
+  float: left;
+}
+
+ul.topnav li a {
+  display: inline-block;
+  color: $nav-foreground-color;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 17px;
+}
+ul.topnav li a:hover {
+  background-color: $nav-background-hover-color;
+}
+
+/* Hide the list item that contains the link that should open and close the topnav on small screens */
+.menu-icon {
+  display: none;
+  width: 20px;
+  height: 20px;
+  /*text-align: center;*/
+  padding: 15px;
+  a {
+    width: 100%;
+    height: 100%;
+  }
+}
+.menu-icon:hover {
+  background-color: $nav-background-hover-color;
+}
+
+/* When the screen is less than 680 pixels wide, hide all list items.
+Show the list item that contains the link to open and close the topnav (.menu-icon) */
+@media screen and (max-width: $break-small) {
+  ul.topnav.responsive {
+    position: absolute;
+    width: 100%;
+    transition: visibility 0.5s;
+  }
+  ul.topnav li {
+    display: none;
+  }
+  .menu-icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user
+clicks on the icon. This class makes the topnav look good on small screens */
+@media screen and (max-width: $break-small) {
+  div.menu-container.responsive {
+    position: relative;
+    float: left;
+    width: 100%;
+  }
+  .menu-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+    a {
+      display: block;
+      text-align: left;
+    }
+  }
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 20px;
+  height: 2px;
+  background-color: $nav-foreground-color;
+  margin: 3px 0;
+  -webkit-transition: 0.5s !important;
+  transition: 0.5s !important;
+
+}
+
+.change {
+  /* Rotate first bar */
+  .bar1 {
+    -webkit-transform: rotate(-45deg) translate(1px, 0px);
+    transform: rotate(-45deg) translate(-.3px, 0px);
+    height: 3px;
+  }
+  /* Fade out the second bar */
+  .bar2 {
+    opacity: 0;
+  }
+  /* Rotate last bar */
+  .bar3 {
+    -webkit-transform: rotate(45deg) translate(-7.5px, -7.5px);
+    transform: rotate(45deg) translate(-7.5px, -7.5px);
+    height: 3px;
+  }
+}
+
+div.container {
+  padding: 0 $side-margin;
+}
+
+div.list-group {
+  width: 100%;
+  margin-top: 20px;
+  color: $nav-background-color;
+  border: 1px solid $nav-background-color;
+  border-radius: 5px;
+}
+div.list-group:last-child {
+  border-bottom: 0;
+}
+
+div.list-element {
+  border-bottom: 1px solid $list-border-color;
+  width: 100%;
+  height: 50px;
+  .list-btns,
+  .list-img,
+  .list-text {
+    display: inline-block;
+  }
+  .list-img {
+    clear: left;
+    margin: 0 5px;
+    i {
+      font-size: 2.5em;
+      padding: 5px;
+    }
+  }
+  .list-text {
+    max-width: calc(100% - 8em);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    .list-text-primary {
+      font-weight: bold;
+    }
+    .list-text-secondary {
+      font-size: 0.8em;
+      font-weight: lighter;
+    }
+  }
+  .list-btns {
+    float: right;
+    height: 100%;
+    line-height: 1.5em;
+    font-size: 2em;
+    margin: 0 5px;
+  }
+}
+div.list-element:hover {
+  color: $nav-foreground-hover-color;
+  background: $nav-background-hover-color;
+}
+
+input.search {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('assets/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  margin-top: 20px;
+}
+input.search:hover {
+  border-color: $nav-background-hover-color;
+}
+
+.control-btns {
+  text-align: center;
+  margin-top: $top-margin;
+}
+
+button.add,
+button.remove {
+  height: 50px;
+  width: 49%;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+}
+@media screen and (min-width: $break-small) {
+  .control-btns {
+    text-align: left;
+  }
+  button.add,
+  button.remove {
+    width: 200px;
+  }
+}
+
+button.add {
+  background: #26b408;
+  color: white;
+}
+button.add:hover {
+  background: #125c02;
+}
+
+button.remove {
+  background: #ff3f3f;
+  color: white;
+}
+button.remove:hover {
+  background: #d50a0a;
+}
+
+.form-group {
+  margin-top: $top-margin;
+}
+input.form-control,
+select.form-control {
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+input.form-control {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 1em;
+  background-color: white;
+  // background-image: url('assets/searchicon.png');
+  // background-position: 10px 12px;
+  // background-repeat: no-repeat;
+  padding: 12px 20px 12px 20px;
+  // margin-top: 20px;
+}

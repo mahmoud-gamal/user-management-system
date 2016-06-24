@@ -1,0 +1,33 @@
+<div class="ui-view" id="add-user">
+  <div class="container">
+    <div class="page-title-container">
+      <div class="page-title inline">Add User</div>
+    </div>
+
+    <form data-bind="submit: function() {addUser()}">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter User Name" class="form-control" data-bind="textInput: username" required="true" />
+      </div>
+
+      <div class="form-group">
+        <label for="role">Role</label>
+        <input type="text" id="role" placeholder="Enter User role" class="form-control" data-bind="textInput: role" required="true" />
+      </div>
+
+      <div class="form-group">
+        <label for="role">Groups</label>
+        <select id="role" class="form-control" data-bind="options: groups,
+                       selectedOptions: selectedGroups" multiple="true" required="true">
+        </select>
+      </div>
+
+      <div class="control-btns">
+        <button type="submit" class="add">Add User</button>
+        <button type="button" class="remove" data-bind="click: function() {cancel()}">Cancel</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>

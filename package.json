@@ -1,0 +1,38 @@
+{
+  "name": "user-managemnt-system",
+  "readme": "readme.md",
+  "version": "1.0.0",
+  "description": "a draft for InterNation assignment",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "globby": "^5.0.0",
+    "eslint": "^2.13.0",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.8.1",
+    "eslint-plugin-jsx-a11y": "^1.5.3",
+    "eslint-plugin-react": "^5.2.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-run": "^1.7.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "jasmine": "^2.4.1",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-requirejs": "^1.0.0",
+    "requirejs": "^2.2.0"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+    "pretest": "npm install",
+    "test": "karma start karma.conf.js",
+    "test-single-run": "karma start karma.conf.js --single-run"
+  },
+  "author": "mahmoud gamal",
+  "license": "MIT"
+}

@@ -1,0 +1,29 @@
+<div id="group-details">
+
+  <div class="container">
+    <div class="page-title" data-bind="text: group().groupName"></div>
+    <div class="page-subtitle" data-bind="text: group().description"></div>
+
+    <div class="control-btns">
+      <button type="button" class="add" data-bind="click: function() {acquireUser()}">Aquire a User</button>
+      <button type="button" class="remove" data-bind="click: function() {deleteGroup()}">Delete Group</button>
+    </div>
+    <h3>Group Users:</h3>
+    <div class="list-group" data-bind="foreach: group().users" >
+      <div class="list-element" data-bind="click: function(data, event) {$root.removeUserFromGroup($data);}" alt="remove user from group">
+        <div class="list-img">
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </div>
+        <div class="list-text">
+          <div class="list-text-primary" data-bind="text: username"></div>
+          <div class="list-text-secondary" data-bind="text: role"></div>
+        </div>
+        <div class="list-btns">
+        <span><i class="fa fa-sign-out" aria-hidden="true"></i></span>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

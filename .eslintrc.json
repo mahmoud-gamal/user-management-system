@@ -1,0 +1,23 @@
+{
+  "extends": "airbnb",
+  "globals": {
+    "$": true,
+    "require": true,
+    "define": true,
+    "requirejs": true,
+    "app": true
+  },
+  "rules": {
+    "comma-dangle": "off",
+    "func-names": "off",
+    "space-before-function-paren": "off",
+    "new-cap": "off",
+    "max-len": "off",
+    "quote-props": "off",
+    "import/no-amd": "off",
+    "global-require": "off"
+  },
+  "plugins": [
+    "react"
+  ]
+}
