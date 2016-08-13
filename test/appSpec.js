@@ -1,24 +1,23 @@
 define(['app', 'mockGenerator', 'simulatedServer', 'dataProvider'],
-  function (app, mockGenerator, simulatedServer, dataProvider) {
-
-    beforeAll(function () {
+  (app, mockGenerator, simulatedServer, dataProvider) => {
+    beforeAll(() => {
       localStorage.clear();
       mockGenerator();
     });
 
-    describe('tests for simulatedServer', function () {
-      it('number of user should be 3', function () {
+    describe('tests for simulatedServer', () => {
+      it('number of user should be 3', () => {
         expect(simulatedServer.getAllUsers().data.length).toBe(3);
       });
 
-      it('number of groups should be 3', function () {
+      it('number of groups should be 3', () => {
         expect(simulatedServer.getAllGroups().data.length).toBe(3);
       });
 
-      it('number of groups of user: addam_terlson should be 2', function () {
+      it('number of groups of user: addam_terlson should be 2', () => {
         expect(simulatedServer.getUser('addam_terlson').data.groups.length).toBe(2);
       });
-      it('should add a user', function () {
+      it('should add a user', () => {
         simulatedServer.addUser('darth_vader', 'Sith Lord', ['developers', 'hr']);
         expect(simulatedServer.getUser('darth_vader').data).not.toBe(null);
         expect(simulatedServer.getUser('darth_vader').data).toEqual({
@@ -35,16 +34,15 @@ define(['app', 'mockGenerator', 'simulatedServer', 'dataProvider'],
       });
     });
 
-    describe('tests for dataProvider', function () {
-      it('should add a new user', function() {
+    describe('tests for dataProvider', () => {
+      it('should add a new user', () => {
         const promise = dataProvider.addUser('darth_maul', 'Sith Lord', ['hr']);
-        console.debug(promise);
-        promise.done(function() {
+        // console.debug(promise);
+        promise.done(() => {
           done();
-        }).fail(function(err) {
-          fail(`something wrong happened ${err}`); 
-        })
-      })
+        }).fail((err) => {
+          fail(`something wrong happened ${err}`);
+        });
+      });
     });
-
   });

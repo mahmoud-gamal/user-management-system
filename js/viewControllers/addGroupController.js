@@ -19,7 +19,7 @@ define(['ko', 'swal', 'app', 'dataProvider'], (ko, swal, app, dataProvider) => {
             swal('Error', err, 'error');
           });
       };
-      self.cancel = function() {
+      self.cancel = function () {
         history.back();
       };
     };

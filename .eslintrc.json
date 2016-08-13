@@ -5,6 +5,12 @@
     "require": true,
     "define": true,
     "requirejs": true,
+    "beforeAll": true,
+    "it": true,
+    "describe": true,
+    "expect": true,
+    "done": true,
+    "fail": true,
     "app": true
   },
   "rules": {

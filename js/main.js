@@ -23,7 +23,4 @@ requirejs.config({
   }
 });
 
-require(['app'], (app) => {
-  // app loaded
-  console.debug(app);
-});
+require(['app']);
