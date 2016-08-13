@@ -43,6 +43,6 @@
 - `deleteGroup(groupName)`: void
 
 ##Instructions
-- To start, run `npm install` then `bower install`
+- To start, run `npm install`, it will run `bower install` automatically after.
 - To compile `sass` run `gulp`
 - simulated db uses `localStorage`
